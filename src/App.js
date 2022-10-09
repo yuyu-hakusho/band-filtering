@@ -8,8 +8,8 @@ function App() {
   const unique = array => [...new Set(array)]
   const capitalize = string => `${string.charAt(0).toUpperCase()
 }${string.slice(1)}`
-  const bandNames = unique(bands.map(band => band.name)).sort()
-  const uniqueInstruments = unique(bands.flatMap(band => band.instruments.map(capitalize))).sort()
+  const bandNames = []
+  const uniqueInstruments = []
 
   return (
     <div className="App">
