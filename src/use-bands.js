@@ -18,12 +18,12 @@ function getData() {
     instruments: ["drums", "guitar", "bass", "voice", "turntable"],
   }]
 
-  return Promise.resolve(bands)
+  return Promise.resolve(bands) //promise lets the code happen ascynchronously, this will return later 
 }
 
 export default function useBands() {
   const [bands, setBands] = useState([])
-  useEffect(() => {
+  useEffect(() => { //historically, useEffect was used to keep an eye on a change on a component and then use a function to fetch the data and save it to the state
     getData().then(bands => {
       setBands(bands)
     })
